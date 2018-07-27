@@ -7,7 +7,7 @@ def create_project_hash
   html = File.read('fixtures/kickstarter.html')
   kickstarter = Nokogiri::HTML(html)
   #doc =  Nokogiri::HTML(open("https://www.imdb.com/chart/top"))
-  #doc.css("a”)[index #].attributes["href"].value
+  #doc.css("a”)[0].attributes["href"].value
 
   projects = {}
 
