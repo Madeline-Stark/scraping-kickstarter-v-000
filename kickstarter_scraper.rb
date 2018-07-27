@@ -1,9 +1,13 @@
 require "nokogiri"
+require "open-uri"
 require "pry"
 
 def create_project_hash
+  binding.pry
   html = File.read('fixtures/kickstarter.html')
   kickstarter = Nokogiri::HTML(html)
+  #doc =  Nokogiri::HTML(open("https://www.imdb.com/chart/top"))
+  #doc.css("a”)[index #].attributes["href"].value
 
   projects = {}
 
@@ -16,8 +20,12 @@ def create_project_hash
       :percent_funded => project.css("ul.project-stats li.first.funded strong").text.gsub("%","").to_i
     }
   end
-
-  projects
+# <<<<<<< HEAD
+#
+# =======
+#
+# >>>>>>> 4992cb8a247bf9c937dffe8c9a0a588b6937ada9
+#   projects
 end
 
 create_project_hash
